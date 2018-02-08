@@ -4,28 +4,38 @@
       "id": 1,
       "email": "wfm@mail.ru",
       "password": "12345678",
-      "name": "Администратор"
+      "name": "Адміністратор"
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 200000,
     "currency": "RUB"
   },
   "categories": [
     {
-      "name": "Дом",
+      "name": "Дім",
       "capacity": 15000,
       "id": 1
     },
     {
-      "name": "Еда",
-      "capacity": 10000,
+      "name": "Їжа",
+      "capacity": 1000,
       "id": 2
     },
     {
       "id": 3,
       "name": "Машина",
       "capacity": 7000
+    },
+    {
+      "name": "Дружина",
+      "capacity": 1000,
+      "id": 4
+    },
+    {
+      "name": "Собака",
+      "capacity": 100,
+      "id": 5
     }
   ],
   "events": [
