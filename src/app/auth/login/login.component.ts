@@ -6,12 +6,15 @@ import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
 import {Message} from '../../shared/models/message.model';
 import {AuthService} from '../../shared/services/auth.service';
+import {fadeStateTrigger} from '../../shared/animations/fade.animation';
+import {Meta, Title} from '@angular/platform-browser';
 
 
 @Component({
   selector: 'wfm-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -22,8 +25,16 @@ export class LoginComponent implements OnInit {
     private usersService: UsersService,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Вход в систему');
+    meta.addTags([
+      { name: 'keywords', content: 'логін, вхід, система'},
+      { name: 'description', content: 'Сторінка для входу в систему'}
+    ]);
+  }
 
   ngOnInit() {
     this.message = new Message('danger', '');
@@ -32,8 +43,13 @@ export class LoginComponent implements OnInit {
       .subscribe((params: Params) => {
        if (params['nowCanLogin']) {
          this.showMessage({
-           text: 'Тепер ви можете зайти в систему',
+           text: 'Тепер ви можете увійти в систему',
            type: 'success'
+         });
+       } else if (params['accessDenied']) {
+         this.showMessage({
+           text: 'Для роботи з системою вам потрібно увійти',
+           type: 'warning'
          });
        }
       });
@@ -74,7 +90,7 @@ export class LoginComponent implements OnInit {
             type: 'danger'
           });
         }
-      })
+      });
   }
 
 }

@@ -5,10 +5,16 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Адміністратор"
+    },
+    {
+      "email": "verhun.taras@gmail.com",
+      "password": "qwertyqwerty",
+      "name": "Тарас",
+      "id": 2
     }
   ],
   "bill": {
-    "value": 200000,
+    "value": 198500,
     "currency": "RUB"
   },
   "categories": [
@@ -19,7 +25,7 @@
     },
     {
       "name": "Їжа",
-      "capacity": 1000,
+      "capacity": 10000,
       "id": 2
     },
     {
@@ -29,12 +35,12 @@
     },
     {
       "name": "Дружина",
-      "capacity": 1000,
+      "capacity": 10000,
       "id": 4
     },
     {
       "name": "Собака",
-      "capacity": 100,
+      "capacity": 300,
       "id": 5
     }
   ],
@@ -44,7 +50,7 @@
       "type": "income",
       "amount": 1250,
       "category": 2,
-      "date": "12.06.2017 19:49:02",
+      "date": "9.02.2018 19:49:02",
       "description": "Подарили еду в гостях"
     },
     {
@@ -52,14 +58,14 @@
       "type": "outcome",
       "amount": 1300,
       "category": 1,
-      "date": "13.06.2017 19:49:02",
+      "date": "9.02.2018 19:49:02",
       "description": "Купил посудомоечную машину"
     },
     {
       "type": "income",
       "amount": 1480,
       "category": 2,
-      "date": "17.06.2017 14:00:48",
+      "date": "10.02.2018 14:00:48",
       "id": 3,
       "description": "Поход в окей с баллами. Бесплатная еда"
     },
@@ -67,17 +73,57 @@
       "type": "outcome",
       "amount": 2470,
       "category": 2,
-      "date": "17.06.2017 14:00:58",
+      "date": "10.02.2018 14:00:58",
       "id": 4,
-      "description": "Закупка на неделю"
+      "description": "Закупка на тиждень"
     },
     {
       "type": "outcome",
       "amount": 4000,
       "category": 3,
-      "date": "10.06.2017 14:01:58",
+      "date": "10.02.2018 14:01:58",
       "id": 5,
-      "description": "Заправка + проход ТО"
+      "description": "Заправка + ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 1200,
+      "category": 3,
+      "date": "11.02.2018 18:15:11",
+      "description": "Ремонт підшипника",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 10000,
+      "category": 4,
+      "date": "11.02.2018 18:15:39",
+      "description": "Шуба",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 5,
+      "date": "12.02.2018 18:15:59",
+      "description": "Корм",
+      "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 200,
+      "category": 5,
+      "date": "12.02.2018 16:52:25",
+      "description": "Буда",
+      "id": 9
+    },
+    {
+      "type": "income",
+      "amount": 100000,
+      "category": 1,
+      "date": "12.02.2018 11:43:52",
+      "description": "Прийшов спадок",
+      "id": 10
     }
   ]
 }
