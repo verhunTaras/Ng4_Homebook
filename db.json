@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 198500,
+    "value": 187500,
     "currency": "RUB"
   },
   "categories": [
@@ -124,6 +124,22 @@
       "date": "12.02.2018 11:43:52",
       "description": "Прийшов спадок",
       "id": 10
+    },
+    {
+      "type": "outcome",
+      "amount": 10000,
+      "category": 1,
+      "date": "12.02.2018 21:35:44",
+      "description": "Ремонт Котла",
+      "id": 11
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 5,
+      "date": "12.02.2018 21:39:27",
+      "description": "ветеринар",
+      "id": 12
     }
   ]
 }

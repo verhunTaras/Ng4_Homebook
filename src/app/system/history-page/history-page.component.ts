@@ -25,6 +25,8 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   events: WFMEvent[] = [];
   filteredEvents: WFMEvent[] = [];
 
+  filtered;
+
   chartData = [];
 
   isFilterVisible = false;
@@ -37,7 +39,13 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
       this.categories = data[0];
       this.events = data[1];
 
-      this.setOriginalEvents();
+      this.filtered = JSON.parse(window.localStorage.getItem('filter'));
+      if (!this.filtered){
+        this.setOriginalEvents();
+      } else {
+        this.onFilterApply(this.filtered);
+      }
+
       this.calculateChartData();
 
 
@@ -72,6 +80,10 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   }
 
   onFilterApply(filterData) {
+    this.events.forEach((e) => {
+      e.catName = this.categories.find(c => c.id ===e.category).name;
+    })
+
     this.toggleFilterVisibility(false);
     this.setOriginalEvents();
 
@@ -89,16 +101,13 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
         const momentDate = moment(e.date, 'DD.MM.YYYY HH:mm:ss');
         return momentDate.isBetween(startPeriod, endPeriod);
       });
-    console.log(this.filteredEvents)
 
     this.calculateChartData();
   }
 
   onFilterCancel() {
     this.toggleFilterVisibility(false);
-    this.setOriginalEvents();
-    this.calculateChartData();
-  }
+   }
 
   ngOnDestroy() {
     if (this.sub1) { this.sub1.unsubscribe(); }

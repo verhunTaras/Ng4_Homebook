@@ -1,6 +1,9 @@
 <div class="modal fade in">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="text-center" *ngIf="!isLoaded">
+      <wfm-loader></wfm-loader>
+    </div>
+    <div class="modal-content" *ngIf="isLoaded">
       <div class="modal-header">
         <button type="button" class="close" (click)="closeFilter()">
           <span>×</span>
@@ -21,8 +24,8 @@
               <input
                 class="checkbox"
                 type="checkbox"
+                [(ngModel)]="checkedTypes[t.type]"
                 [value]="t.type"
-                (change)="handleChangeType($event.target)"
               >
               <span>{{t.label}}</span>
             </label>
@@ -36,7 +39,7 @@
                 class="checkbox"
                 type="checkbox"
                 [value]="c.id"
-                (change)="handleChangeCategory($event.target)"
+                [(ngModel)]="checkedCategories[c.id]"
               >
               <span>{{c.name}}</span>
             </label>
