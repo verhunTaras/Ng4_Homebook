@@ -15,14 +15,14 @@
           </thead>
           <tbody>
             <tr>
-              <td>RUB</td>
+              <td>UAH</td>
               <td>1</td>
-              <td>{{ currency.date | wfmMoment:'YYYY-MM-DD' }}</td>
+              <td>{{ currency.date }}</td>
             </tr>
             <tr *ngFor="let c of currencies">
               <td>{{ c }}</td>
-              <td>{{ currency.rates[c] }}</td>
-              <td>{{ currency.date | wfmMoment:'YYYY-MM-DD'}}</td>
+              <td>{{ currency.rates[c] | number:'1.4'}}</td>
+              <td>{{ currency.date }}</td>
             </tr>
           </tbody>
         </table>

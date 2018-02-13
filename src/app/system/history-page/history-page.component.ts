@@ -28,6 +28,11 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   filtered;
 
   chartData = [];
+  chartDataIncome = [];
+  charts = {
+    'income': true,
+    'outcome': true
+  };
 
   isFilterVisible = false;
 
@@ -69,6 +74,17 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
         }, 0)
       });
     });
+    this.chartDataIncome = [];
+    this.categories.forEach((cat) => {
+      const catEvents = this.filteredEvents.filter((e) => e.category === cat.id && e.type === 'income');
+      this.chartDataIncome.push({
+        name: cat.name,
+        value: catEvents.reduce((total, e) => {
+          total += e.amount;
+          return total;
+        }, 0)
+      });
+    });
   }
 
   private toggleFilterVisibility(dir: boolean) {
@@ -81,8 +97,16 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
 
   onFilterApply(filterData) {
     this.events.forEach((e) => {
-      e.catName = this.categories.find(c => c.id ===e.category).name;
-    })
+      e.catName = this.categories.find(c => c.id === e.category).name;
+    });
+
+    this.charts = {
+      'income': false,
+      'outcome': false
+    };
+    filterData.types.forEach((e) => {
+      this.charts[e] = true;
+    });
 
     this.toggleFilterVisibility(false);
     this.setOriginalEvents();
@@ -107,7 +131,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
 
   onFilterCancel() {
     this.toggleFilterVisibility(false);
-   }
+  }
 
   ngOnDestroy() {
     if (this.sub1) { this.sub1.unsubscribe(); }

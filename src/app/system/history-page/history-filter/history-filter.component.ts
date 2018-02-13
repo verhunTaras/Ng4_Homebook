@@ -34,8 +34,8 @@ export class HistoryFilterComponent implements OnInit {
   ];
 
   types = [
-    {type: 'income', label: 'Дохід'},
-    {type: 'outcome', label: 'Витрати'}
+    {type: 'outcome', label: 'Витрати'},
+    {type: 'income', label: 'Дохід'}
   ];
 
   ngOnInit() {

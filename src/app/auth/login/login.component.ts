@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Вход в систему');
+    title.setTitle('Вхід в систему');
     meta.addTags([
       { name: 'keywords', content: 'логін, вхід, система'},
       { name: 'description', content: 'Сторінка для входу в систему'}

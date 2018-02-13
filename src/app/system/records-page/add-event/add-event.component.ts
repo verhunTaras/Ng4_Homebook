@@ -56,7 +56,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
         let value = 0
         if(type === 'outcome') {
           if(amount > bill.value) {
-            this.showMessage(`На рахунку недостатньо коштів. Вам не вистачає ${amount - bill.value} RUB`);
+            this.showMessage(`На рахунку недостатньо коштів. Вам не вистачає ${amount - bill.value} UAH`);
             return;
           } else {
             value = bill.value - amount;
@@ -82,8 +82,8 @@ export class AddEventComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if(this.sub1) this.sub1.unsubscribe();
-    if(this.sub2) this.sub2.unsubscribe();
+    if (this.sub1) {this.sub1.unsubscribe();}
+    if (this.sub2) {this.sub2.unsubscribe();}
   }
 
 }

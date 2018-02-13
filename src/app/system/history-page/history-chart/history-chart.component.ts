@@ -1,16 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'wfm-history-chart',
   templateUrl: './history-chart.component.html',
   styleUrls: ['./history-chart.component.scss']
 })
-export class HistoryChartComponent{
+export class HistoryChartComponent {
 
   @Input() data;
-
-
-  constructor() { }
-
+  @Input() dataIncome;
+  @Input() charts;
 
 }
