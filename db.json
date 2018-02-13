@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 187500,
+    "value": 200000,
     "currency": "RUB"
   },
   "categories": [
@@ -140,6 +140,46 @@
       "date": "12.02.2018 21:39:27",
       "description": "ветеринар",
       "id": 12
+    },
+    {
+      "type": "income",
+      "amount": 1000,
+      "category": 5,
+      "date": "13.02.2018 11:19:44",
+      "description": "Собака приніс кроля",
+      "id": 13
+    },
+    {
+      "type": "income",
+      "amount": 10000,
+      "category": 5,
+      "date": "13.02.2018 11:20:25",
+      "description": "Собака приніс Айфон",
+      "id": 14
+    },
+    {
+      "type": "income",
+      "amount": 3000,
+      "category": 2,
+      "date": "13.02.2018 12:30:32",
+      "description": "Подарували 30кг мяса",
+      "id": 15
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 1,
+      "date": "13.02.2018 12:59:34",
+      "description": "Купив Лампочки",
+      "id": 16
+    },
+    {
+      "type": "outcome",
+      "amount": 1400,
+      "category": 4,
+      "date": "13.02.2018 14:21:19",
+      "description": "Лівчик і труси",
+      "id": 17
     }
   ]
 }

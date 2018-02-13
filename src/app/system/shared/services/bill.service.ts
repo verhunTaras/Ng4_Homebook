@@ -22,8 +22,8 @@ export class BillService extends BaseApi{
     return this.put('bill', bill);
   }
 
-  getCurrency(base: string = 'RUB'): Observable<any> {
-    return this.http.get(`https://api.fixer.io/latest?base=${base}`)
+  getCurrency(): Observable<any> {
+    return this.http.get(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`)
       .map((response: Response) => response.json());
   }
 }
