@@ -135,6 +135,6 @@ app.get('/events/:id', function (req, resp) {
 
 
 
-app.listen(3030, function(){
+app.listen(process.env.PORT || 3030, function(){
   console.log('Connected, Taras')
 })
