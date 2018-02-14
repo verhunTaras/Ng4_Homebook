@@ -14,8 +14,8 @@
     }
   ],
   "bill": {
-    "value": 200000,
-    "currency": "RUB"
+    "value": 300000,
+    "currency": "UAH"
   },
   "categories": [
     {
@@ -42,6 +42,11 @@
       "name": "Собака",
       "capacity": 300,
       "id": 5
+    },
+    {
+      "name": "Робота",
+      "capacity": 3000,
+      "id": 6
     }
   ],
   "events": [
@@ -180,6 +185,30 @@
       "date": "13.02.2018 14:21:19",
       "description": "Лівчик і труси",
       "id": 17
+    },
+    {
+      "type": "income",
+      "amount": 100000,
+      "category": 1,
+      "date": "13.02.2018 18:30:04",
+      "description": "Продали земельну ділянку",
+      "id": 18
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 6,
+      "date": "13.02.2018 19:22:54",
+      "description": "Обід",
+      "id": 19
+    },
+    {
+      "type": "income",
+      "amount": 100,
+      "category": 6,
+      "date": "13.02.2018 20:09:06",
+      "description": "Прийшли якісь 100 грн.",
+      "id": 20
     }
   ]
 }

@@ -28,6 +28,9 @@ export class AddEventComponent implements OnInit, OnDestroy {
 
   message: Message;
 
+  events: WFMEvent[] = [];
+  event_id;
+
   constructor(
     private eventsService: EventsService,
     private billService: BillService
@@ -35,6 +38,12 @@ export class AddEventComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.message = new Message('danger', '');
+
+    this.eventsService.getEvents()
+      .subscribe(events => {
+        this.events = events;
+        this.event_id = this.events.length + 1;
+      })
   }
 
   private showMessage(text: string){
@@ -48,11 +57,12 @@ export class AddEventComponent implements OnInit, OnDestroy {
 
     const event = new WFMEvent(
       type, amount, +category,
-      moment().format('DD.MM.YYYY HH:mm:ss'), description
+      moment().format('DD.MM.YYYY HH:mm:ss'), description, this.event_id
     );
 
     this.sub1 = this.billService.getBill()
-      .subscribe((bill: Bill) => {
+      .subscribe((billArr: Bill) => {
+        const bill = billArr[0];
         let value = 0
         if(type === 'outcome') {
           if(amount > bill.value) {
@@ -66,7 +76,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
         }
 
         this.sub2 = this.billService.updateBill({
-          value,
+          value: value,
           currency: bill.currency
         }).mergeMap(() => this.eventsService.addEvent(event))
           .subscribe(() => {

@@ -7,7 +7,7 @@
     <div class="col-xs-12 chart-center">
       <ngx-charts-pie-chart
         *ngIf="charts.outcome"
-        [view]="[700, 400]"
+        [view]="[450, 400]"
         [results]="data"
         [scheme]="{domain: ['#647c8a', '#3f51b5', '#2196f3', '#00b862', '#afdf0a', '#a7b61a', '#f3e562', '#ff9800', '#ff5722', '#ff4514']}"
         [legend]="false"
@@ -16,7 +16,7 @@
       </ngx-charts-pie-chart>
       <ngx-charts-pie-chart
         *ngIf="charts.income"
-        [view]="[700, 400]"
+        [view]="[450, 400]"
         [results]="dataIncome"
         [scheme]="{domain: ['#FAC51D', '#66BD6D', '#FAA026', '#29BB9C', '#E96B56', '#55ACD2', '#B7332F', '#2C83C9', '#9166B8', '#92E7E8']}"
         [legend]="false"

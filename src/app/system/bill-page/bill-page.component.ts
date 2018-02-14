@@ -30,7 +30,7 @@ export class BillPageComponent implements OnInit, OnDestroy {
       this.billService.getBill(),
       this.billService.getCurrency()
     ).subscribe((data: [Bill, any]) => {
-      this.bill = data[0];
+      this.bill = data[0][0];
       this.formatCurrencyData(data[1]);
 
       this.isLoaded = true;

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {CategoriesService} from "../../shared/services/categories.service";
@@ -15,6 +15,7 @@ export class AddCategoryComponent implements OnDestroy{
   sub1: Subscription;
 
   @Output() onCategoryAdd = new EventEmitter<Category>();
+  @Input() categories: Category[] = [];
 
   constructor(private categoriesService: CategoriesService) { }
 
@@ -23,7 +24,9 @@ export class AddCategoryComponent implements OnDestroy{
     let { name, capacity } = form.value;
     if (capacity < 0) capacity *= -1;
 
-    const category = new Category(name, capacity);
+    let id = this.categories[this.categories.length-1]['id'] + 1;
+
+    const category = new Category(name, capacity, id);
 
     this.sub1 = this.categoriesService.addCategory(category)
       .subscribe((category: Category) => {

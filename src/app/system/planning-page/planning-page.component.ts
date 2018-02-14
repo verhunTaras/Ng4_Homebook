@@ -32,7 +32,7 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
       this.categoriesService.getCategories(),
       this.eventsService.getEvents()
     ).subscribe((data: [Bill, Category[], WFMEvent[]]) => {
-      this.bill = data[0];
+      this.bill = data[0][0];
       this.categories = data[1];
       this.events = data[2];
 

@@ -5,7 +5,9 @@ export class WFMEvent {
     public category: number,
     public date: string,
     public description: string,
-    public id?: string,
-    public catName?: string
+    public id?: number,
+    public catName?: string,
+    public _v?: number,
+    public _id?: string
   ) { }
 }
